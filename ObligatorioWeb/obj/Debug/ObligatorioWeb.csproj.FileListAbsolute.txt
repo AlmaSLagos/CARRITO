@@ -1,0 +1,30 @@
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csprojAssemblyReference.cache
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csproj.CoreCompileInputs.cache
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.exe.config
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.exe
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.pdb
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioDominio.dll
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioDominio.pdb
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csproj.CopyComplete
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.exe
+C:\Users\reiko\source\repos\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.pdb
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.exe.config
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.exe
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.pdb
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioDominio.dll
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioDominio.pdb
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csprojAssemblyReference.cache
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csproj.CoreCompileInputs.cache
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csproj.CopyComplete
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.exe
+C:\Users\reiko\Desktop\P2\Obligatorio\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.pdb
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.exe.config
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.exe
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioWeb.pdb
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioDominio.dll
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\bin\Debug\ObligatorioDominio.pdb
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csprojAssemblyReference.cache
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csproj.CoreCompileInputs.cache
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.csproj.CopyComplete
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.exe
+C:\Users\reiko\Desktop\P2\Obligatorio\Obligatorio 2\ObligatorioWeb\ObligatorioWeb\obj\Debug\ObligatorioWeb.pdb

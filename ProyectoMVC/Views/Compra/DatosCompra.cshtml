@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "DatosCompra";
+}
+
+<h2>DatosCompra</h2>
+<p style="color:red">PARA HACER SU COMPRA LLENE ESTOS DATOS:</p>
+<form method="post" action="~/Compra/RecibeDatos">
+    <label style="width:300px; text-align:center; color: black; font-family:'Agency FB'; font-size:18px">Ingrese su mail</label><br />
+    <input type="text" name="cliente" style="width:300px"/><br />
+    <label style="width:300px; text-align:center; color: black; font-family:'Agency FB'; font-size:18px">Fecha actual</label><br />
+    <input type="date" name="fechaCompra" style="width:300px"/><br />
+    <label style="width:300px; text-align:center; color: black; font-family:'Agency FB'; font-size:18px">Forma de Pago</label><br />
+    <input type="radio" name="formaPago" value="1" /><label>Tarjeta</label><br />
+    <input type="radio" name="formaPago" value="2" /><label>Efectivo contra entrega</label><br />
+    <label style="width:300px; text-align:center; color: black; font-family:'Agency FB'; font-size:18px">Forma de Entrega</label><br />
+    <input type="radio" name="formaEntrega" value="1" /><label>Domicilio</label><br />
+    <input type="radio" name="formaEntrega" value="2" /><label>Retiro en pickup</label><br />
+    <input type="submit" value="OK" style="width:300px; background-color: red; color: white"/>
+</form>
+<p>@ViewBag.Mensaje</p>
+
+

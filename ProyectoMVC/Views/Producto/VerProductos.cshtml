@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "VerProductos";
+}
+
+<h2>VerProductos</h2>
+<p>PRODUCTOS</p>
+<p>@ViewBag.MostrarProductos</p>
+<p>MODIFICAR PRECIO</p>
+<form method="post" action="~/Producto/ModificarPrecio">
+    <label style="width:300px; text-align:center; color: black; font-family:'Agency FB'; font-size:18px">ELIJA UN PRODUCTO PARA CAMBIAR EL PRECIO:</label><br />
+    <select name="id" style="width:500px">
+        @foreach (ObligatorioDominio.Producto producto in ObligatorioDominio.HabiaUnaVez.Instancia.Productos)
+        {
+            <option value="@producto.Id">@producto.NombreProducto - @producto.Descripcion - @producto.PrecioUnitario - @producto.TipoMoneda</option>
+        }
+    </select>
+    <br /><label style="width:300px; text-align:center; color: black; font-family:'Agency FB'; font-size:18px">Precio</label><br />
+    <input type="number" name="precioUnitario" style="width:300px" /><br />
+    <input type="submit" value="CAMBIAR" style="width:300px; background-color: red; color: white" />
+</form>
+<p>@ViewBag.Precio</p>
