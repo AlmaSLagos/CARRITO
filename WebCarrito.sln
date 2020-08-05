@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCarrito", "WebCarrito\WebCarrito.csproj", "{03B1C02B-4A04-4ACE-98AD-F075B1E2ACFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominioCarrito", "DominioCarrito\DominioCarrito.csproj", "{7D45B10E-1261-4C27-9642-C754DC7B7FB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03B1C02B-4A04-4ACE-98AD-F075B1E2ACFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B1C02B-4A04-4ACE-98AD-F075B1E2ACFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03B1C02B-4A04-4ACE-98AD-F075B1E2ACFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B1C02B-4A04-4ACE-98AD-F075B1E2ACFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D45B10E-1261-4C27-9642-C754DC7B7FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D45B10E-1261-4C27-9642-C754DC7B7FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D45B10E-1261-4C27-9642-C754DC7B7FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D45B10E-1261-4C27-9642-C754DC7B7FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7D6DA14-D848-4739-9192-95306DC8D4F0}
+	EndGlobalSection
+EndGlobal
