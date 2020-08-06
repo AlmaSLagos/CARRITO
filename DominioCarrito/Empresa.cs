@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioCarrito
 {
-    class Empresa:Cliente
+    public class Empresa:Cliente
     {
         private string nombreEmpresa;
         private string razonSocial;

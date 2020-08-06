@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioCarrito
 {
-    class Comun:Cliente
+    public class Comun:Cliente
     {
         private string nombre;
         private string cedula;
