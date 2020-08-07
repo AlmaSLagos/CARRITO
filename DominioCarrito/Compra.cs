@@ -61,25 +61,22 @@ namespace DominioCarrito
             Terminada = true;
         }
         #endregion
-        #region String total de dolares y pesos por separado
-        public string Total()
+        #region Total a pagar
+        public double Total( double valorDolar)
         {
-            double totalD = 0, totalP = 0;
-            string mensaje = "", dolar = "", pesos = "";
+            double total = 0;
             for (int i = 0; producto.Count > i; i++)
             {
                 if (producto[i].Producto.TipoMoneda == "USD")
                 {
-                    totalD += producto[i].Producto.Precio * producto[i].Cantidad;
-                    dolar = "$USD" + totalD;
+                    total += (producto[i].Producto.Precio * valorDolar) * producto[i].Cantidad;
                 }
                 else
                 {
-                    totalP += producto[i].Producto.Precio * producto[i].Cantidad;
-                    pesos = "$UYU" + totalP;
+                    total += producto[i].Producto.Precio * producto[i].Cantidad;
                 }
             }
-            return mensaje = "Total: " + dolar + " y " + pesos;
+            return total;
         }
         #endregion
     }
