@@ -16,7 +16,7 @@ namespace DominioCarrito
         private Cliente cliente;
         private List<UnProducto> producto = new List<UnProducto>();
         private bool terminada = false;
-
+        #region Property
         public bool Terminada { get { return terminada; } set { terminada = value; } }
         public int Id { get { return id; } set { id = value; } }
         public int FormaPago { get { return formaPago; } set { formaPago = value; } }
@@ -24,7 +24,8 @@ namespace DominioCarrito
         public DateTime FechaCompra { get { return fechaCompra; } set { fechaCompra = value; } }
         public Cliente Cliente { get { return cliente; } set { cliente = value; } }
         public List<UnProducto> Producto { get { return producto; } set { producto = value; } }
-
+        #endregion
+        #region Constructor
         public Compra(int formaPago, int formaEntrega, DateTime fechaCompra, Cliente cliente)
         {
             Id = Compra.ultId;
@@ -34,7 +35,8 @@ namespace DominioCarrito
             FechaCompra = fechaCompra;
             Cliente = cliente;
         }
-
+        #endregion
+        #region Validar forma de pago
         public static bool ValidarFormaPago(int formaPago)
         {
             return formaPago == 1 || formaPago == 2;
@@ -44,36 +46,41 @@ namespace DominioCarrito
         {
             return formaEntrega == 1 || formaEntrega == 2;
         }
-
-        public void AgregarProducto(Producto idProductoBuscado, double cantidad)
+        #endregion
+        #region Agregar producto al carrito y finalizar compra
+        public void AgregarProducto(Producto productoBuscado, double cantidad)
         {
-            if (idProductoBuscado != null && cantidad > 0)
+            if (productoBuscado != null && cantidad > 0)
             {
-                UnProducto productoComprado = new UnProducto(idProductoBuscado, cantidad);
+                UnProducto productoComprado = new UnProducto(productoBuscado, cantidad);
                 producto.Add(productoComprado);
             }
         }
-
         public void FinalizarUnaCompra()
         {
             Terminada = true;
         }
-
-        public double Total()
+        #endregion
+        #region String total de dolares y pesos por separado
+        public string Total()
         {
-            double total = 0;
+            double totalD = 0, totalP = 0;
+            string mensaje = "", dolar = "", pesos = "";
             for (int i = 0; producto.Count > i; i++)
             {
                 if (producto[i].Producto.TipoMoneda == "USD")
                 {
-                    total += producto[i].Producto.Precio * 30 * producto[i].Cantidad;
+                    totalD += producto[i].Producto.Precio * producto[i].Cantidad;
+                    dolar = "$USD" + totalD;
                 }
                 else
                 {
-                    total += producto[i].Producto.Precio * producto[i].Cantidad;
+                    totalP += producto[i].Producto.Precio * producto[i].Cantidad;
+                    pesos = "$UYU" + totalP;
                 }
             }
-            return total;
+            return mensaje = "Total: " + dolar + " y " + pesos;
         }
+        #endregion
     }
 }

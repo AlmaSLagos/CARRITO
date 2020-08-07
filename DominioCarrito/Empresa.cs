@@ -11,7 +11,6 @@ namespace DominioCarrito
         private string nombreEmpresa;
         private string razonSocial;
         private string rut;
-
         #region Propertys
         public string NombreEmpresa { get { return nombreEmpresa; } set { nombreEmpresa = value; } }
         public string RazonSocial { get { return razonSocial; } set { razonSocial = value; } }
@@ -25,7 +24,6 @@ namespace DominioCarrito
             Rut = rut;
         }
         #endregion
-
         public override string ToString()
         {
             return base.ToString() + " Nombre de la Empresa: " + NombreEmpresa + " Razon Social: " + RazonSocial + " Rut: " + Rut;

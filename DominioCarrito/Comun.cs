@@ -11,7 +11,6 @@ namespace DominioCarrito
         private string nombre;
         private string cedula;
         private string celular;
-
         #region Property
         public string Nombre { get { return nombre; } set { nombre = value; } }
         public string Cedula { get { return cedula; } set { cedula = value; } }

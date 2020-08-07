@@ -14,7 +14,6 @@ namespace DominioCarrito
         private int departamento;
         private DateTime fechaRegistro;
         private string password;
-
         #region Propertys
         public string Mail { get { return mail; } set { mail = value; } }
         public string Direccion { get { return direccion; } set { direccion = value; } }
