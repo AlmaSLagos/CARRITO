@@ -1,0 +1,6 @@
+C:\Users\reiko\Desktop\PROYECTOS\Code\CARRITO\DominioCarrito\bin\Debug\DominioCarrito.dll
+C:\Users\reiko\Desktop\PROYECTOS\Code\CARRITO\DominioCarrito\bin\Debug\DominioCarrito.pdb
+C:\Users\reiko\Desktop\PROYECTOS\Code\CARRITO\DominioCarrito\obj\Debug\DominioCarrito.csprojAssemblyReference.cache
+C:\Users\reiko\Desktop\PROYECTOS\Code\CARRITO\DominioCarrito\obj\Debug\DominioCarrito.csproj.CoreCompileInputs.cache
+C:\Users\reiko\Desktop\PROYECTOS\Code\CARRITO\DominioCarrito\obj\Debug\DominioCarrito.dll
+C:\Users\reiko\Desktop\PROYECTOS\Code\CARRITO\DominioCarrito\obj\Debug\DominioCarrito.pdb
