@@ -9,24 +9,21 @@ namespace DominioCarrito
     public class Comun:Cliente
     {
         private string nombre;
-        private string cedula;
-        private string celular;
+        private int cedula;
         #region Property
         public string Nombre { get { return nombre; } set { nombre = value; } }
-        public string Cedula { get { return cedula; } set { cedula = value; } }
-        public string Celular { get { return celular; } set { celular = value; } }
+        public int Cedula { get { return cedula; } set { cedula = value; } }
         #endregion
         #region HerenciaConstructor
-        public Comun(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombre, string cedula, string celular) : base(mail, direccion, nombreUser, departamento, fechaRegistro, password)
+        public Comun(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombre, int cedula) : base(mail, direccion, nombreUser, departamento, fechaRegistro, password)
         {
             Nombre = nombre;
             Cedula = cedula;
-            Celular = celular;
         }
         #endregion
         public override string ToString()
         {
-            return base.ToString() + " Nombre del Cliente: " + Nombre + " Cedula: " + Cedula + " Celular: " + Celular;
+            return base.ToString() + " Nombre del Cliente: " + Nombre + " Cedula: " + Cedula + " Celular: ";
         }
     }
 }

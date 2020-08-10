@@ -20,6 +20,22 @@ namespace DominioCarrito
         public List<Compra> Compras { get { return compras; } }
         public List<Administrador> Administradores { get { return administradores; } }
         #endregion
+        //Precargas
+        #region Precarga
+        public Sistema()
+        {
+            PrecargaAdmin();
+        }
+        private void PrecargaAdmin()
+        {
+            AltaAdmin("administrador@gmail.com", "Admin123", "Reiko Miyamoto");
+        }
+        private void PrecargaCliente()
+        {
+            AltaClienteComun("cliente-comun@gmail.com", "Calle Sauce 235", "Juan Perez", 2, new DateTime(2019, 10, 25), "Comun123", "Juan Perez", 12345678);
+            AltaClienteEmpresa("cliente-empresa@gmail.com", "18 de Julio 123", "Anna Ramirez", 1, new DateTime(2019, 10, 25), "Empresa123", "ROSA Restor", "ROSALES S.A.", 211234560051);
+        }
+        #endregion
         //Busquedas.
         #region Busca Admin
         private Administrador BuscarAdmin(string mail)
@@ -128,18 +144,18 @@ namespace DominioCarrito
         }
         #endregion
         #region Alta Cliente Comun
-        public string AltaClienteComun(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombre, string cedula, string celular)
+        public string AltaClienteComun(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombre, int cedula)
         {
             string mensajeUno = "El cliente no se dio de alta";
             if (mail != "" && direccion != "" && nombreUser != "" && departamento > 0
-                && password != "" && nombre != "" && cedula != "" && celular != "" && Cliente.ValidarDepartamento(departamento) && mail != "alma@gmail.com")
+                && password != "" && nombre != "" && cedula > 0 && Cliente.ValidarDepartamento(departamento) && mail != "alma@gmail.com")
             {
                 Cliente clienteBuscado = BuscarCliente(mail);
                 bool ciInvalido = VerificoCedula(cedula);
                 bool mailInvalido = VerificoMail(mail);
                 if (clienteBuscado == null && clienteBuscado is Comun && !ciInvalido && !mailInvalido)
                 {
-                    clienteBuscado = new Comun(mail, direccion, nombreUser, departamento, fechaRegistro, password, nombre, cedula, celular);
+                    clienteBuscado = new Comun(mail, direccion, nombreUser, departamento, fechaRegistro, password, nombre, cedula);
                     clientes.Add(clienteBuscado);
                     mensajeUno = "El cliente se dio de alta correctamente";
                 }
@@ -156,11 +172,11 @@ namespace DominioCarrito
         }
         #endregion
         #region Alta Cliente Empresa
-        public string AltaClienteEmpresa(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombreEmpresa, string razonSocial, string rut)
+        public string AltaClienteEmpresa(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombreEmpresa, string razonSocial, long rut)
         {
             string mensajeDos = "La empresa no se dio de alta";
             if (mail != "" && direccion != "" && nombreUser != "" && departamento > 0
-                && password != "" && nombreEmpresa != "" && razonSocial != "" && rut != "" && Cliente.ValidarDepartamento(departamento) && mail != "alma@gmail.com")
+                && password != "" && nombreEmpresa != "" && razonSocial != "" && rut > 0 && Cliente.ValidarDepartamento(departamento) && mail != "alma@gmail.com")
             {
                 Cliente clienteBuscado = BuscarCliente(mail);
                 bool rutInvalido = VerificoRut(rut);
@@ -297,28 +313,36 @@ namespace DominioCarrito
         #endregion
         //Validaciones.
         #region RUT
-        private bool VerificoRut(string rut)
+        private bool VerificoRut(long rut)
         {
+            long digitos = (long)Math.Floor(Math.Log10(rut) + 1); //verifico cantidad de digitos.
             bool repetido = false;
-            for (int i = 0; clientes.Count > i && !repetido; i++)
+            if (digitos == 12)
             {
-                if (((Empresa)clientes[i]).Rut == rut)
+                for (int i = 0; clientes.Count > i && !repetido; i++)
                 {
-                    repetido = true;
+                    if (((Empresa)clientes[i]).Rut == rut) //verifico que no se repita.
+                    {
+                        repetido = true;
+                    }
                 }
             }
             return repetido;
         }
         #endregion
         #region CI
-        private bool VerificoCedula(string cedula)
+        private bool VerificoCedula(int cedula)
         {
+            int digitos = (int)Math.Floor(Math.Log10(cedula) + 1);
             bool repetido = false;
-            for (int i = 0; clientes.Count > i && !repetido; i++)
+            if (digitos == 8)
             {
-                if (((Comun)clientes[i]).Cedula == cedula)
+                for (int i = 0; clientes.Count > i && !repetido; i++)
                 {
-                    repetido = true;
+                    if (((Comun)clientes[i]).Cedula == cedula)
+                    {
+                        repetido = true;
+                    }
                 }
             }
             return repetido;
@@ -330,7 +354,7 @@ namespace DominioCarrito
             bool repetido = false;
             for (int i = 0; clientes.Count > i && !repetido; i++)
             {
-                if (((Comun)clientes[i]).Cedula == mail)
+                if (clientes[i].Mail == mail)
                 {
                     repetido = true;
                 }
