@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DatosCompra</title>
+</head>
+<body>
+    <div>
+        <p>PARA HACER SU COMPRA LLENE ESTOS DATOS:</p>
+        <form method="post" action="~/Compra/RecibeDatos">
+            <label>Ingrese su mail</label><br />
+            <input type="text" name="cliente" /><br />
+            <label>Fecha actual</label><br />
+            <input type="date" name="fechaCompra" /><br />
+            <label>Forma de Pago</label><br />
+            <input type="radio" name="formaPago" value="1" /><label>Tarjeta</label><br />
+            <input type="radio" name="formaPago" value="2" /><label>Efectivo contra entrega</label><br />
+            <label>Forma de Entrega</label><br />
+            <input type="radio" name="formaEntrega" value="1" /><label>Domicilio</label><br />
+            <input type="radio" name="formaEntrega" value="2" /><label>Retiro en pickup</label><br />
+            <input type="submit" value="OK" />
+        </form>
+        <p>@ViewBag.Mensaje</p>
+    </div>
+</body>
+</html>

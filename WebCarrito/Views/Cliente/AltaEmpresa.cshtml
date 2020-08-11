@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AltaEmpresa</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="~/Cliente/Y">
+            <input type="text" name="nombreEmpresa" />
+            <input type="text" name="razonSocial" />
+            <input type="number" min="0" name="rut" />
+            <input type="text" name="direccion" />
+            <fieldset style="width:300px">
+                <legend style="font-size:12px">Es de Montevideo</legend>
+                <input type="radio" name="departamento" value="1" /><label>Si</label><br />
+                <input type="radio" name="departamento" value="2" /><label>No</label><br />
+            </fieldset>
+            <input type="text" name="mail" />
+            <input type="password" name="password" />
+            <input type="text" name="nombreUser" />
+            <input type="datetime-local" name="fechaRegistro" />
+            <input type="submit" value="Guardar" />
+        </form>
+        <p>@ViewBag.Mensaje</p>
+    </div>
+</body>
+</html>

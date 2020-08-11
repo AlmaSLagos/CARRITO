@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AltaComun</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="~/Cliente/X">
+            <input type="text" name="nombre" />
+            <input type="number" min="0" name="cedula" />
+            <input type="text" name="direccion" />
+            <fieldset style="width:300px">
+                <legend style="font-size:12px">Vive en Montevideo</legend>
+                <input type="radio" name="departamento" value="1" /><label>Si</label><br />
+                <input type="radio" name="departamento" value="2" /><label>No</label><br />
+            </fieldset>
+            <input type="text" name="mail" />
+            <input type="password" name="password" />
+            <input type="text" name="nombreUser" />
+            <input type="datetime-local" name="fechaRegistro" />
+            <input type="submit" value="Guardar" />
+        </form>
+        <p>@ViewBag.Mensaje</p>
+    </div>
+</body>
+</html>

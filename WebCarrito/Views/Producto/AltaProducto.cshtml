@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AltaProducto</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="~/Producto/X">
+            <p>ALTA PRODUCTO</p>
+            <label>Nombre producto</label><br />
+            <input type="text" name="nombreProducto" /><br />
+            <label>Precio</label><br />
+            <input type="number" name="precioUnitario" /><br />
+            <fieldset>
+                <legend>Tipo de Moneda</legend>
+                <input type="radio" name="tipoMoneda" value="UYP" /><label>UYP</label><br />
+                <input type="radio" name="tipoMoneda" value="USD" /><label>USD</label><br />
+            </fieldset>
+            <select name="categoria">
+                <option value="Frescos">Frescos</option>
+                <option value="Congelados">Congelados</option>
+                <option value="Hogar">Hogar</option>
+                <option value="Textiles">Textiles</option>
+                <option value="Tecnologia">Tecnologia</option>
+            </select>
+            <br /><br /> <textarea name="descripcion" cols="50" rows="10">
+                Descripcion del producto...
+           </textarea>
+            <br /><br /><input type="submit" value="Guardar" />
+        </form>
+        <p>@ViewBag.Mensaje</p>
+        <p>MODIFICAR PRECIO</p>
+        <form method="post" action="~/Producto/Y">
+            <label>ELIJA UN PRODUCTO PARA CAMBIAR EL PRECIO:</label><br />
+            <select name="id">
+                @foreach (DominioCarrito.Producto producto in DominioCarrito.Sistema.Instancia.Productos)
+                {
+                    <option value="@producto.Id">@producto.NombreProducto - @producto.Descripcion - @producto.Precio - @producto.TipoMoneda</option>
+                }
+            </select>
+            <br /><label>Precio</label><br />
+            <input type="number" name="precioUnitario" /><br />
+            <fieldset>
+                <legend>Tipo de Moneda</legend>
+                <input type="radio" name="tipoMoneda" value="UYP" /><label>UYP</label><br />
+                <input type="radio" name="tipoMoneda" value="USD" /><label>USD</label><br />
+            </fieldset>
+            <input type="submit" value="CAMBIAR" />
+        </form>
+        <p>@ViewBag.MensajeDos</p>
+    </div>
+</body>
+</html>

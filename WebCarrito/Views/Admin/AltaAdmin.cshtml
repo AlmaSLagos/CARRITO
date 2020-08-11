@@ -12,7 +12,14 @@
 </head>
 <body>
     <h1>Alta de Administrador</h1>
-    <div> 
+    <div>
+        <form method="post" action="~/Admin/X">
+            <input type="text" name="mail" />
+            <input type="password" name="password" />
+            <input type="text" name="nombreUser" />
+            <input type="submit" value="Entrar" />
+        </form>
+        <p>@ViewBag.Mensaje</p>
     </div>
 </body>
 </html>

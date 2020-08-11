@@ -25,6 +25,7 @@ namespace DominioCarrito
         public Sistema()
         {
             PrecargaAdmin();
+            PrecargaCliente();
         }
         private void PrecargaAdmin()
         {
@@ -34,6 +35,29 @@ namespace DominioCarrito
         {
             AltaClienteComun("cliente-comun@gmail.com", "Calle Sauce 235", "Juan Perez", 2, new DateTime(2019, 10, 25), "Comun123", "Juan Perez", 12345678);
             AltaClienteEmpresa("cliente-empresa@gmail.com", "18 de Julio 123", "Anna Ramirez", 1, new DateTime(2019, 10, 25), "Empresa123", "ROSA Restor", "ROSALES S.A.", 211234560051);
+        }
+        private void PrecargaDatosProducto()
+        {
+            AltaProducto("Papa Rosada Granel Kg", "Producto uruguayo", "Frescos", 53, "UYP");
+            AltaProducto("Queso Muzzarella en fetas Kg", "Oferta, antes $340 el kilo.", "Frescos", 310, "UYP");
+            AltaProducto("Tomate Americano Kg", "Producto no transgenico.", "Frescos", 124, "UYP");
+            AltaProducto("Manzana Red Deliciosa Kg", "Producto uruguayo", "Frescos", 66, "UYP");
+            AltaProducto("Hamburguesas Extra Grande x6", "Carne vacuna 6 unidades.", "Congelados", 310, "UYP");
+            AltaProducto("Helado Crema sabor Vainilla 2L", "producto uruguayo", "Congelados", 347, "UYP");
+            AltaProducto("Hamburguessa Clasica x2 167g", "Carne vacuna 2 unidades", "Congelados", 68, "UYP");
+            AltaProducto("Chaja Petit", "Postre Helado 100g", "Congelados", 75, "UYP");
+            AltaProducto("Pizza Americana x2 900g", "Pronta para calentar y comer. 2 Unidades.", "Congelados", 299, "UYP");
+            AltaProducto("Fosforos extra largos", "caja 50 unidades", "Hogar", 38, "UYP");
+            AltaProducto("Bolsas para freezer", "20x30cm 30 unidades", "Hogar", 82, "UYP");
+            AltaProducto("Cloro para piscina 10Lt", "producto en oferta", "Hogar", 390, "UYP");
+            AltaProducto("Repasador ajedres cuadros", "producto uruguayo 80% algodon", "Textiles", 115, "UYP");
+            AltaProducto("Toalla de mano", "Blanca hotelera 50x90", "Textiles", 272, "UYP");
+            AltaProducto("Delantal antimanchas c/peto", "forrado en pvc, resistente", "Textiles", 119, "UYP");
+            AltaProducto("Edredon", "100% Poliester 2 plazas 2,10x2,30m", "Textiles", 1100, "UYP");
+            AltaProducto("Champion lona adulto", "Tallas 36/41 variedad de colores", "Textiles", 390, "UYP");
+            AltaProducto("SmartTV 55' Ultra HD", "Con 3 años de garantia", "Tecnologia", 529, "USD");
+            AltaProducto("Playstation PS4 Sony", "Con 1 año de garantia con un juego de regalo.", "Tecnologia", 489, "USD");
+            AltaProducto("Lavarropas Carga Frontal", "Lavado rapido 6Kg Con 3 años de garantia", "Tecnologia", 257, "USD");
         }
         #endregion
         //Busquedas.
@@ -201,7 +225,7 @@ namespace DominioCarrito
         }
         #endregion 
         #region Alta Producto
-        public string AltaProducto(string nombreProducto, string descripcion, string exclusivo, string categoria, double precio, string tipoMoneda)
+        public string AltaProducto(string nombreProducto, string descripcion, string categoria, double precio, string tipoMoneda)
         {
             string mensajeTres = "El producto no se dio de alta";
             if (nombreProducto != "" && descripcion != "" && categoria != "" && precio > 0
@@ -361,6 +385,36 @@ namespace DominioCarrito
             }
             return repetido;
         }
+        #endregion
+        #region PASSWORD
+        /*
+        private bool VerificoPassword(string password)
+        {
+            bool passBien = false;
+            //Creo la variable y dos contadores, uno para la letra y otro para los numeros.
+            int i = 0, num = 0, letra = 0;
+            //recorro en password y si encuentro letras las guardo en el contador letra y si encuentro numeros los guardo en el contador numeros. 
+            while (i < password.Length)
+            {
+                var textoi = password[i].charCodeAt();
+                if (textoi > 64 && textoi < 91 || textoi > 96 && textoi < 123)
+                {
+                    letra++;
+                }
+                else if (textoi > 47 && textoi < 58)
+                {
+                    num++;
+              }
+                i++;
+            }
+            //si el password tiene ambos contadores mayores a cero significa que el texto contiene por lo menos una letra y un numero :)
+            if (num > 0 && letra > 0)
+            {
+                passBien = true;
+            }
+            return passBien;
+        }
+        */
         #endregion
     }
 }

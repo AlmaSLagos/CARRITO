@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Carrito</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="~/Compra/ProducEnElCarrito">
+            <label>ELIJA UN PRODUCTO PARA PONER AL CARRITO:</label><br />
+            <select name="idProducto">
+                @foreach (DominioCarrito.Producto producto in DominioCarrito.Sistema.Instancia.Productos)
+                {
+                    <option value="@producto.Id">@producto.NombreProducto - @producto.Descripcion - @producto.Precio - @producto.TipoMoneda</option>
+                }
+            </select>
+            <br /><label>CANTIDAD:</label><br />
+            <input type="number" name="cantidad" /><br />
+            <label>ELIJA LA COMPRA A LA QUE A&Ntilde;ADIRA EL PRODUCTO:</label><br />
+            <select name="idCompra">
+                @foreach (DominioCarrito.Compra compra in DominioCarrito.Sistema.Instancia.Compras)
+                {
+                    if (compra.Cliente.Mail == Session["mailUser"].ToString() && compra.Terminada == false)
+                    {
+                        if (compra.FormaPago == 1 && compra.FormaEntrega == 1)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Tarjeta - Entrega: Domicilio </option>
+                        }
+                        if (compra.FormaPago == 1 && compra.FormaEntrega == 2)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Tarjeta - Entrega: Retiro del pickup </option>
+                        }
+                        if (compra.FormaPago == 2 && compra.FormaEntrega == 1)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Efectivo contra entrega - Entrega: Domicilio </option>
+                        }
+                        if (compra.FormaPago == 2 && compra.FormaEntrega == 2)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Efectivo contra entrega - Entrega: Retiro del pickup </option>
+                        }
+                    }
+                }
+            </select>
+            <br /><br /><input type="submit" value="PONER EN CARRITO" />
+        </form>
+        <p>@ViewBag.Total</p>
+        <p>@ViewBag.Verificar</p>
+        <form method="post" action="~/Compra/TerminarCompra">
+            <label>ELIJA LA COMPRA QUE VA A FINALIZAR</label><br />
+            <select name="idCompra">
+                @foreach (DominioCarrito.Compra compra in DominioCarrito.Sistema.Instancia.Compras)
+                {
+                    if (compra.Cliente.Mail == Session["mailUser"].ToString() && compra.Terminada == false)
+                    {
+                        if (compra.FormaPago == 1 && compra.FormaEntrega == 1)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Tarjeta - Entrega: Domicilio </option>
+                        }
+                        if (compra.FormaPago == 1 && compra.FormaEntrega == 2)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Tarjeta - Entrega: Retiro del pickup </option>
+                        }
+                        if (compra.FormaPago == 2 && compra.FormaEntrega == 1)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Efectivo contra entrega - Entrega: Domicilio </option>
+                        }
+                        if (compra.FormaPago == 2 && compra.FormaEntrega == 2)
+                        {
+                            <option value="@compra.Id">@compra.FechaCompra Forma de pago: Efectivo contra entrega - Entrega: Retiro del pickup </option>
+                        }
+                    }
+                }
+            </select>
+            <br /><br /><input type="submit" value="FINALIZAR COMPRA"/>
+        </form>
+        <p>@ViewBag.Finalizada</p>
+    </div>
+</body>
+</html>
