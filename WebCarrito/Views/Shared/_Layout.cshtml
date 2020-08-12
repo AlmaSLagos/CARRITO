@@ -18,6 +18,20 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Application name", "Index", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Application name", "AltaEmpresa", "Cliente", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Application name", "AltaComun", "Cliente", new { area = "" }, new { @class = "navbar-brand" })
+                @if (Session["rol"] != null && Session["rol"].ToString() == "cliente")
+                {
+                    @Html.ActionLink("Application name", "Carrito", "Compra", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Application name", "DatosCompra", "Compra", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Application name", "Clientes", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                }
+                @if (Session["rol"] != null && Session["rol"].ToString() == "admin")
+                {
+                    @Html.ActionLink("Application name", "AltaAdmin", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Application name", "AltaProducto", "Producto", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Application name", "Administrador", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                }
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
