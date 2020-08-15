@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Monoton&display=swap" rel="stylesheet" />
+    <title>Catalogo</title>
+</head>
+<body>
+    <header>
+        <h1>SHOPING-YA!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">CATALOGO</a>
+            </li>
+            <li>
+                <a href="#">INGRESAR</a>
+            </li>
+            <li>
+                <a href="#">REGISTRARSE</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <table border="1">
+            @foreach (DominioCarrito.Producto producto in DominioCarrito.Sistema.Instancia.Productos)
+            {
+            <tr>
+
+                <td>@producto.NombreProducto</td>
+
+                <td>$@producto.Precio</td>
+
+                @if (producto.TipoMoneda == "USD")
+                {
+                    <td>Dolares</td>
+                }
+
+                @if (producto.TipoMoneda == "UYP")
+                {
+                    <td>Pesos</td>
+                }
+
+            </tr>
+            }
+        </table>
+    </div>
+    <footer>
+
+    </footer>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 10px;
+            text-align: center;
+            font-family: 'Monoton', cursiva;
+            color: magenta;
+            font-size: 40px;
+            background-color: black;
+            height: 4cm;
+        }
+
+        nav ul li {
+            border: 1px solid black;
+            width: 150px;
+            height: 30px;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            background-color: black;
+            border-radius: 0 0 10px 10px;
+        }
+
+        nav {
+            margin-right: 5px;
+            float: right;
+            clear: both;
+        }
+
+        nav a {
+            font-family: 'Heebo', sans-serif;
+            color: white;
+            font-size: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: black;
+            margin-left: 22%;
+            font-family: 'Notable', sans-serif;
+        }
+    </style>
+</body>
+</html>

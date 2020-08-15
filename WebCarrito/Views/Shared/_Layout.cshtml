@@ -20,6 +20,7 @@
                 @Html.ActionLink("Application name", "Index", "Login", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Application name", "AltaEmpresa", "Cliente", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Application name", "AltaComun", "Cliente", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Application name", "Catalogo", "Producto", new { area = "" }, new { @class = "navbar-brand" })
                 @if (Session["rol"] != null && Session["rol"].ToString() == "cliente")
                 {
                     @Html.ActionLink("Application name", "Carrito", "Compra", new { area = "" }, new { @class = "navbar-brand" })

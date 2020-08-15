@@ -45,11 +45,11 @@ namespace WebCarrito.Controllers
         }
         public ActionResult Administradores()
         {
-            return View();
+            return View("Administradores");
         }
         public ActionResult Clientes()
         {
-            return View();
+            return View("Clientes");
         }
     }
 }

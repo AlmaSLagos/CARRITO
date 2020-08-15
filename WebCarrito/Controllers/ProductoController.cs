@@ -30,5 +30,9 @@ namespace WebCarrito.Controllers
             }
             return View("AltaProducto");
         }
+        public ActionResult Catalogo()
+        {
+            return View("Catalogo");
+        }
     }
 }
