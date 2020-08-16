@@ -7,32 +7,144 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Monoton&display=swap" rel="stylesheet" />
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <ul>
-        <li>
-            <p>Datos de prueba: </p>
-            <ul>
-                <li><p>(mail: administrador@gmail.com password: Admin123)</p></li>
-                <li><p>(mail: cliente-comun@gmail.com password: Comun123)</p></li>
-                <li><p>(mail: cliente-empresa@gmail.com password: Empresa123)</p></li>
-            </ul>
-        </li>
-    </ul>
-    
-    
-    
-    
+    <header>
+        <h1>SHOPING-YA!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="@Url.Action("Catalogo","Producto")">CATALOGO</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index","Login")">INGRESAR</a>
+            </li>
+            <li>
+                <a href="@Url.Action("AltaComun","Cliente")" id="registrarse">REGISTRARSE</a>
+            </li>
+        </ul>
+    </nav>
+    <h2>Login</h2>
+
     <div>
         <form method="post" action="~/Login/Login">
-            <input type="text" name="mail"/>
-            <input type="password" name="password"/>
-            <input type="submit" value="Entrar"/>
+            <label>E-mail</label><br />
+            <input type="text" name="mail" /><br />
+            <label>Contrase&ntilde;a</label><br />
+            <input type="password" name="password" /><br />
+            <input type="submit" value="Entrar" />
         </form>
         <p>@ViewBag.Mensaje</p>
     </div>
+    <div>
+        <ul>
+            <li>
+                <p>Datos de prueba: </p>
+                <ul>
+                    <li><p>(mail: administrador@gmail.com password: Admin123)</p></li>
+                    <li><p>(mail: cliente-comun@gmail.com password: Comun123)</p></li>
+                    <li><p>(mail: cliente-empresa@gmail.com password: Empresa123)</p></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer></footer>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: dimgray;
+        }
+
+        header {
+            text-align: center;
+            font-family: 'Monoton', cursiva;
+            color: magenta;
+            font-size: 40px;
+            background-color: black;
+            height: 4cm;
+        }
+
+        nav ul li {
+            border: 1px solid black;
+            width: 150px;
+            height: 30px;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            background-color: black;
+            border-radius: 0 0 10px 10px;
+        }
+
+        nav {
+            margin-right: 5px;
+            float: right;
+            clear: both;
+        }
+
+            nav a {
+                font-family: 'Heebo', sans-serif;
+                color: white;
+                font-size: 100%;
+            }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: black;
+            margin-left: 22%;
+            font-family: 'Notable', sans-serif;
+        }
+
+        @@media screen and (max-width: 1024px) {
+            header {
+                font-size: 30px;
+                height: 3cm;
+            }
+        }
+
+        @@media screen and (max-width: 768px) {
+            header {
+                font-size: 20px;
+                height: 2cm;
+            }
+        }
+
+        @@media screen and (max-width: 500px) {
+            header {
+                font-size: 20px;
+                height: 2cm;
+            }
+
+            nav ul li {
+                width: 80px;
+                height: 20px;
+                position: relative;
+            }
+
+            nav a {
+                font-size: 70%;
+                position: absolute;
+                top: 50%;
+                margin-top: -20px;
+                margin-left: -25px;
+            }
+
+            #registrarse {
+                margin-left: -35px;
+            }
+        }
+    </style>
 </body>
 </html>

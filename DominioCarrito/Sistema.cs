@@ -170,7 +170,7 @@ namespace DominioCarrito
         #region Alta Cliente Comun
         public string AltaClienteComun(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombre, int cedula)
         {
-            string mensajeUno = "El cliente no se dio de alta";
+            string mensajeUno = "Error.";
             if (mail != "" && direccion != "" && nombreUser != "" && departamento > 0
                 && password != "" && nombre != "" && cedula > 0 && Cliente.ValidarDepartamento(departamento) && mail != "alma@gmail.com")
             {
@@ -181,16 +181,16 @@ namespace DominioCarrito
                 {
                     clienteBuscado = new Comun(mail, direccion, nombreUser, departamento, fechaRegistro, password, nombre, cedula);
                     clientes.Add(clienteBuscado);
-                    mensajeUno = "El cliente se dio de alta correctamente";
+                    mensajeUno = "Se registro correctamente.";
                 }
                 else
                 {
-                    mensajeUno = "Ya existe un cliente con ese numero de cedula o mail";
+                    mensajeUno = "Ya existe un cliente con ese numero de cedula o mail.";
                 }
             }
             else
             {
-                mensajeUno = "Los datos ingresados no son correctos";
+                mensajeUno = "Los datos ingresados no son correctos.";
             }
             return mensajeUno;
         }
@@ -198,7 +198,7 @@ namespace DominioCarrito
         #region Alta Cliente Empresa
         public string AltaClienteEmpresa(string mail, string direccion, string nombreUser, int departamento, DateTime fechaRegistro, string password, string nombreEmpresa, string razonSocial, long rut)
         {
-            string mensajeDos = "La empresa no se dio de alta";
+            string mensajeDos = "Error.";
             if (mail != "" && direccion != "" && nombreUser != "" && departamento > 0
                 && password != "" && nombreEmpresa != "" && razonSocial != "" && rut > 0 && Cliente.ValidarDepartamento(departamento) && mail != "alma@gmail.com")
             {
@@ -209,17 +209,17 @@ namespace DominioCarrito
                 {
                     clienteBuscado = new Empresa(mail, direccion, nombreUser, departamento, fechaRegistro, password, nombreEmpresa, razonSocial, rut);
                     clientes.Add(clienteBuscado);
-                    mensajeDos = "La empresa con rut " + rut +
-                        "se dio de alta correctamente";
+                    mensajeDos = "La empresa con rut: " + rut +
+                        " se dio de alta correctamente.";
                 }
                 else
                 {
-                    mensajeDos = "Ya existe una empresa con ese rut o mail";
+                    mensajeDos = "Ya existe una empresa con ese rut o mail.";
                 }
             }
             else
             {
-                mensajeDos = "Los datos ingresados no son correctos";
+                mensajeDos = "Los datos ingresados no son correctos.";
             }
             return mensajeDos;
         }

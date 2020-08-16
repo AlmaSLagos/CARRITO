@@ -18,16 +18,17 @@
     <nav>
         <ul>
             <li>
-                <a href="#">CATALOGO</a>
+                <a href="@Url.Action("Catalogo","Producto")">CATALOGO</a>
             </li>
             <li>
-                <a href="#">INGRESAR</a>
+                <a href="@Url.Action("Index","Login")">INGRESAR</a>
             </li>
             <li>
-                <a href="#">REGISTRARSE</a>
+                <a href="@Url.Action("AltaComun","Cliente")" id="registrarse">REGISTRARSE</a>
             </li>
         </ul>
     </nav>
+    <h2>Catalogo</h2>
     <div>
         <table border="1">
             @foreach (DominioCarrito.Producto producto in DominioCarrito.Sistema.Instancia.Productos)
@@ -61,8 +62,11 @@
             padding: 0;
         }
 
+        body{
+            background-color:dimgray;
+        }
+
         header {
-            margin-top: 10px;
             text-align: center;
             font-family: 'Monoton', cursiva;
             color: magenta;
@@ -104,6 +108,39 @@
             color: black;
             margin-left: 22%;
             font-family: 'Notable', sans-serif;
+        }
+        @@media screen and (max-width: 1024px){
+            header {
+                font-size: 30px;
+                height: 3cm;
+            }
+        }
+        @@media screen and (max-width: 768px){
+            header {
+                font-size: 20px;
+                height: 2cm;
+            }
+        }
+        @@media screen and (max-width: 500px) {
+            header {
+                font-size: 20px;
+                height: 2cm;
+            }
+            nav ul li {
+                width: 80px;
+                height: 20px;
+                position:relative;
+            }
+            nav a {
+                font-size: 70%;
+                position:absolute;
+                top: 50%;
+                margin-top: -20px;
+                margin-left: -25px;
+            }
+            #registrarse {
+                margin-left: -35px;
+            }
         }
     </style>
 </body>
