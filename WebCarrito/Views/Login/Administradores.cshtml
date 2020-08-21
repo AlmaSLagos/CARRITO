@@ -36,8 +36,30 @@
     </nav>
     <h2>Catalogo</h2>
     <p>@Html.ActionLink("Para dar de alta un producto haz clik aqui", "AltaProducto", "Producto")</p>
-    <div>
-    </div>
+    <section>
+        <table border="1">
+            @foreach (DominioCarrito.Producto producto in DominioCarrito.Sistema.Instancia.Productos)
+            {
+                <tr>
+
+                    <td>@producto.NombreProducto</td>
+
+                    <td>$@producto.Precio</td>
+
+                    @if (producto.TipoMoneda == "USD")
+                    {
+                        <td>Dolares</td>
+                    }
+
+                    @if (producto.TipoMoneda == "UYP")
+                    {
+                        <td>Pesos</td>
+                    }
+
+                </tr>
+            }
+        </table>
+    </section>
     <footer></footer>
     <style>
         * {
@@ -91,10 +113,49 @@
         }
 
         h2 {
-            font-size: 40px;
+            padding-top: 50px;
+            padding-bottom: 30px;
+            font-size: 60px;
             color: black;
-            margin-left: 22%;
             font-family: 'Notable', sans-serif;
+            text-align: center;
+        }
+        p {
+            padding-left: 10%;
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 1px solid rgb(180, 180, 180);
+            height: 50px;
+        }
+
+            tr:nth-child(even) {
+                background-color: #dfdddd;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #f5f5f5;
+            }
+
+            tr:hover {
+                background-color: #c6e9e8;
+            }
+
+        th {
+            text-align: left;
+        }
+
+        section {
+            width: 80%;
+            padding-left: 10%;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         @@media screen and (max-width: 1024px) {
@@ -133,7 +194,7 @@
 
         @@media screen and (max-width: 500px) {
             header {
-                font-size: 25px;
+                font-size: 20px;
                 height: 2cm;
             }
 

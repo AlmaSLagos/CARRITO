@@ -26,6 +26,7 @@ namespace DominioCarrito
         {
             PrecargaAdmin();
             PrecargaCliente();
+            PrecargaDatosProducto();
         }
         private void PrecargaAdmin()
         {
