@@ -7,19 +7,240 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Monoton&display=swap" rel="stylesheet" />
     <title>Alta Admin</title>
 </head>
 <body>
-    <h1>Alta de Administrador</h1>
+    <header>
+        <h1>SHOPING-YA!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="@Url.Action("Administradores","Login")">CATALOGO</a>
+            </li>
+            <li class="a">
+                <a href="@Url.Action("AltaAdmin","Admin")">ADMINS</a>
+            </li>
+            <li id="abandonado">
+                <a href="@Url.Action("CarritoAbandonado","Compra")">CARRITO ABANDONADO</a>
+            </li>
+            <li id="mas">
+                <a href="@Url.Action("Ver","Admin")">MAS</a>
+            </li>
+            <li class="a">
+                <a href="@Url.Action("Index","Login")">SALIR</a>
+            </li>
+        </ul>
+    </nav>
     <div>
-        <form method="post" action="~/Admin/X">
-            <input type="text" name="mail" />
-            <input type="password" name="password" />
-            <input type="text" name="nombreUser" />
-            <input type="submit" value="Entrar" />
-        </form>
-        <p>@ViewBag.Mensaje</p>
+        <section>
+            <h2>Alta de Administrador</h2>
+            <form method="post" action="~/Admin/X">
+                <label>E-Mail</label><br />
+                <input type="text" name="mail" /><br />
+                <label>Contrase&ntilde;a</label><br />
+                <input type="password" name="password" /><br />
+                <label>Nombre de usuario</label><br />
+                <input type="text" name="nombreUser" /><br />
+                <input type="submit" value="Entrar" />
+            </form>
+            <p>@ViewBag.Mensaje</p>
+        </section>
+        <section>
+            <h2>Administradores</h2>
+            <table border="1">
+                @foreach (DominioCarrito.Administrador admin in DominioCarrito.Sistema.Instancia.Administradores)
+                {
+                    <tr>
+
+                        <td>@admin.NombreUser</td>
+
+                        <td>$@admin.Mail</td>
+
+                    </tr>
+                }
+            </table>
+        </section>
     </div>
+    
+    <footer></footer>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: dimgray;
+        }
+
+        header {
+            text-align: center;
+            font-family: 'Monoton', cursiva;
+            color: magenta;
+            font-size: 40px;
+            background-color: black;
+            height: 3cm;
+        }
+
+        nav ul li {
+            border: 1px solid black;
+            width: 150px;
+            height: 30px;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            background-color: black;
+            border-radius: 0 0 10px 10px;
+        }
+
+        nav {
+            margin-right: 5px;
+            float: right;
+            clear: both;
+        }
+
+            nav a {
+                font-family: 'Heebo', sans-serif;
+                color: white;
+                font-size: 100%;
+            }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #abandonado {
+            width: 250px;
+        }
+
+        h2 {
+            padding-top: 50px;
+            padding-bottom: 30px;
+            font-size: 60px;
+            color: black;
+            font-family: 'Notable', sans-serif;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 1px solid rgb(180, 180, 180);
+            height: 50px;
+        }
+
+            tr:nth-child(even) {
+                background-color: #dfdddd;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #f5f5f5;
+            }
+
+            tr:hover {
+                background-color: #c6e9e8;
+            }
+
+        th {
+            text-align: left;
+        }
+
+        section {
+            width: 80%;
+            padding-left: 10%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        @@media screen and (max-width: 1024px) {
+            header {
+                font-size: 30px;
+                height: 2cm;
+            }
+
+            #abandonado {
+                width: 180px;
+            }
+
+            nav ul li {
+                width: 120px;
+            }
+
+            nav a {
+                font-size: 80%
+            }
+        }
+
+        @@media screen and (max-width: 768px) {
+            header {
+                font-size: 30px;
+                height: 2cm;
+            }
+
+            nav ul li {
+                width: 60px;
+            }
+
+            nav a {
+                font-size: 60%
+            }
+
+            #abandonado {
+                width: 150px;
+            }
+        }
+
+        @@media screen and (max-width: 500px) {
+            header {
+                font-size: 20px;
+                height: 2cm;
+            }
+
+            nav ul li {
+                width: 50px;
+                height: 20px;
+                position: relative;
+            }
+
+            nav a {
+                font-size: 50%;
+                position: absolute;
+                top: 50%;
+                margin-top: -20px;
+                margin-left: -22px;
+            }
+
+            #abandonado {
+                width: 120px;
+            }
+
+                #abandonado a {
+                    margin-left: -50px;
+                }
+
+            #mas {
+                width: 30px;
+            }
+
+                #mas a {
+                    margin-left: -10px;
+                }
+
+            .a {
+                width: 40px;
+            }
+
+                .a a {
+                    margin-left: -14px;
+                }
+        }
+    </style>
 </body>
 </html>
